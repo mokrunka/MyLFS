@@ -240,7 +240,7 @@ function init_image {
 
     echo -n "Creating basic directory layout... "
 
-    # LFS 11.2 Section 4.2
+    # LFS 12.4 Section 4.2
     mkdir -p $LFS/{etc,var}
     mkdir -p $LFS/usr/{bin,lib,sbin}
     for i in bin lib sbin
@@ -252,10 +252,10 @@ function init_image {
     esac
     mkdir -p $LFS/tools
 
-    # LFS 11.2 Section 7.3
+    # LFS 12.4 Section 7.3
     mkdir -p $LFS/{dev,proc,sys,run}
 
-    # LFS 11.2 Section 7.5
+    # LFS 12.4 Section 7.5
     mkdir -p $LFS/{boot,home,mnt,opt,srv}
     mkdir -p $LFS/etc/{opt,sysconfig}
     mkdir -p $LFS/lib/firmware
@@ -272,7 +272,7 @@ function init_image {
     install -d -m 0750 $LFS/root
     install -d -m 1777 $LFS/tmp $LFS/var/tmp
 
-    # LFS 11.2 Section 7.6
+    # LFS 12.4 Section 7.6
     ln -s /proc/self/mounts $LFS/etc/mtab
     touch $LFS/var/log/{btmp,lastlog,faillog,wtmp}
     chgrp 13 $LFS/var/log/lastlog # 13 == utmp
