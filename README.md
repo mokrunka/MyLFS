@@ -170,7 +170,7 @@ scp lfs.img root@<proxmoxIP>:/<storage_id>
 
 Next, run
 ```sh
-qm importdisk <VMID> lfs.img <storage_id>
+qm importdisk <VMID> path/to/lfs.img <storage_id>
 ```
 
 VMID is the VM ID of the newly created machine. storage_id is the name of the storage you transferred the lfs.img file to.
