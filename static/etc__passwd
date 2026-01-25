@@ -5,4 +5,5 @@ messagebus:x:18:18:D-Bus Message Daemon User:/run/dbus:/usr/bin/false
 uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
 tester:x:101:101::/home/tester:/bin/bash
 nobody:x:65534:65534:Unprivileged User:/dev/null:/usr/bin/false
-
+systemd-network:x:76:76:systemd Network Management :/:/usr/bin/fals
+systemd-resolve:x:77:77:systemd Resolver:/:/usr/bin/false
