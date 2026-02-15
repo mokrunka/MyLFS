@@ -177,7 +177,7 @@ init_image() {
         LFS_PARTUUID="$(lsblk -o PARTUUID "$LOOP_P1" | tail -1)"
         while [[ -z $LFS_PARTUUID ]]; do
             # sometimes it takes a few seconds for the PARTUUID to be readable
-            sleep 1
+            sleep 2
             LFS_PARTUUID="$(lsblk -o PARTUUID "$LOOP_P1" | tail -1)"
         done
     }
@@ -901,9 +901,16 @@ main() {
         fi
     done
     if (( ! opcount )); then
-        log_error 'must specify one of:'\
-        $'\n-b|--build-all\n-e|--check\n-d|--download-packages\n-i|--init\n-p|--start-phase\n'\
-        $'-m|--mount\n-u|--umount\n-n|--install\n-c|--clean'
+        log_error "must specify one of:
+        -b|--build-all
+        -e|--check
+        -d|--download-packages
+        -i|--init
+        -p|--start-phase
+        -m|--mount
+        -u|--umount
+        -n|--install
+        -c|--clean"
         exit 1
     fi
 
