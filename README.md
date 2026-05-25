@@ -1,5 +1,5 @@
 # MyLFS
-It's a giant bash script that builds Linux From Scratch.
+It's a giant bash script that builds Linux From Scratch. Pronounce it however feels best to you.
 
 If you don't know what this is, or haven't built Linux From Scratch on your own before, you should go through the LFS [book](https://linuxfromscratch.org) before using this script. I have been careful to leave some comments throughout the script indicating the section of the book that a particular part of the script comes from, although most sections are not marked. For example, you might see "LFS 12.4 Section 4.2". For someone wanting to understand this script while going through the book, paying attention to these may come in handy.
 
