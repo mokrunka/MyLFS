@@ -257,6 +257,7 @@ init_image() {
         install_static "$f"
     done
     if [[ -n $KERNELCONFIG ]]; then
+        mkdir "$LFS/boot"
         cp "$KERNELCONFIG" "$LFS/boot/config-$LFS_KERNEL_VERSION"
     fi
 
@@ -448,7 +449,9 @@ build_package() {
         set -ueExo pipefail
         $(cat "$script_path")
         popd
-        rm -rf 'sources/$script_name'
+        # keep the linux source around in case of rebuilds
+        set +e
+        [[ $script_name != linux ]] && rm -rf 'sources/$script_name'
     "
 
     pushd "$LFS" > /dev/null
