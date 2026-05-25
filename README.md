@@ -3,7 +3,11 @@ It's a giant bash script that builds Linux From Scratch. Pronounce it however fe
 
 If you don't know what this is, or haven't built Linux From Scratch on your own before, you should go through the LFS [book](https://linuxfromscratch.org) before using this script. I have been careful to leave some comments throughout the script indicating the section of the book that a particular part of the script comes from, although most sections are not marked. For example, you might see "LFS 12.4 Section 4.2". For someone wanting to understand this script while going through the book, paying attention to these may come in handy.
 
-This is a script that I wrote for myself and for my own use, but I encourage others to fork this repository and either craft their own versions, or submit PRs to this one.
+This is a script that krglaws initially wrote to automate the Linux From Scratch (LFS) build procedure. It more or less follows the book.
+I forked his version, and updated it with the intent of regularly updating it to the latest version of the book (currently 13.0). Note that
+the book recently changed (in version 13.0) to remove sysvinit build instructions, and is now only compatible with systemd.
+
+If you'd like to contribute, please feel free to create PRs.
 
 ## How To Use
 Consult the `mylfs.sh` help message to get a full picture of its features:
