@@ -110,7 +110,7 @@ The script builds LFS by completing the following steps:
 1. Download package source code and save to the `./packages/` directory.
 
 
-2. Create a 10 gigabyte IMG file called `lfs.img`. This will serve as a virtual hard drive on which to build LFS.
+2. Create a 50 gigabyte IMG file called `lfs.img`. This will serve as a virtual hard drive on which to build LFS. The image file size can be customized in the config.sh file.
 
 
 3. "Attach" the IMG file as a loop device using `losetup`. This way, the host machine can operate on the IMG file as if it were a physical storage device.
@@ -182,7 +182,7 @@ This will unmount the IMG file (if it is mounted), delete it, and delete the log
 
 
 ## Booting
-So far, I have managed to boot the IMG file using QEMU (see the [runqemu.sh](runqemu.sh) script) and on bare metal using a flash drive. I have not been able to boot it up on a VM yet.
+So far, I have managed to boot the IMG file using QEMU (see the [runqemu.sh](runqemu.sh) script) and on bare metal using a flash drive.
 
 I have also been able to get the LFS.img file to boot in Proxmox 9.1.4, as follows:
 
