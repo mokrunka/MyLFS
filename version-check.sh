@@ -51,7 +51,11 @@ version_check() {
     sort   /dev/null || bail "sort does not work"
 
     # Coreutils first because --version-sort needs Coreutils >= 7.0
-    ver_check Coreutils      sort     8.1 || bail "Coreutils too old, stop"
+    if sort --version |& grep -q uutils; then
+        ver_check Coreutils      sort     0.8 || bail "Uutils Coreutils too old, stop"
+    else
+        ver_check Coreutils      sort     8.1 || bail "Coreutils too old, stop"
+    fi
     ver_check Bash           bash     3.2
     ver_check Binutils       ld       2.13.1
     ver_check Bison          bison    2.7
@@ -71,7 +75,7 @@ version_check() {
     ver_check Tar            tar      1.22
     ver_check Texinfo        texi2any 5.0
     ver_check Xz             xz       5.0.0
-    ver_kernel 5.4
+    ver_kernel 5.10
 
     if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]
     then echo "OK:    Linux Kernel supports UNIX 98 PTY";
