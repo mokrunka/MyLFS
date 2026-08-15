@@ -190,7 +190,7 @@ init_image() {
 
     e2label "$LOOP_P1" "$LFS_ROOT_LABEL"
 
-    # LFS 12.4 Section 4.2
+    # LFS 13.0 Section 4.2
     mkdir -p "$LFS/"{etc,var}
     mkdir -p "$LFS/usr/"{bin,lib,sbin}
     local i
@@ -248,6 +248,7 @@ init_image() {
 
     # LFS 12.4 Section 10.3.2
     install -m755 -d "$LFS/etc/modprobe.d"
+    #note: if loading USB drivers, may need to add additional lines from book here
 
     # install static files
     echo "$LFS_HOSTNAME" > "$LFS/etc/hostname"

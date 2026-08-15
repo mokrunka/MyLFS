@@ -15,9 +15,9 @@ umask 022
 # 2) make or other build tools
 # 3) in the template files
 export LC_ALL=POSIX
-export LFS_VERSION=12.4
+export LFS_VERSION=13.0
 export LFS_CODENAME=lfs  # change this to whatever you want
-export LFS_KERNEL_VERSION=6.16.1
+export LFS_KERNEL_VERSION=6.18.10
 export LFS_TGT=$ARCH-lfs-linux-gnu
 export LFS_ROOT_LABEL=LFSROOT
 export LFS_FS_TYPE=ext4
@@ -56,7 +56,7 @@ SKIPINIT=0 # skip the --init step which often preceeds other operations
 export RUN_TESTS=0
 
 # used for the systemd build
-export BUILDSYSTEMD=0
+export BUILDSYSTEMD=1
 KERNEL_SUFFIX=$( ((BUILDSYSTEMD)) && echo -systemd || echo "" )
 export LFS_KERNEL_SUFFIX=$KERNEL_SUFFIX
 
