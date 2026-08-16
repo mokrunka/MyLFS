@@ -1,4 +1,6 @@
 # Linux API headers Phase 1
+# LFS 13.1 Section 5.4
+
 make mrproper
 make headers
 

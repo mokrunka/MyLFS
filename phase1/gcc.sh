@@ -1,4 +1,6 @@
 # GCC Phase 1
+# LFS 13.1 Section 5.3
+
 PKG_MPFR=$(basename $PKG_MPFR)
 PKG_GMP=$(basename $PKG_GMP)
 PKG_MPC=$(basename $PKG_MPC)
@@ -14,7 +16,7 @@ mv ${PKG_MPC%.tar*} mpc
 
 case $(uname -m) in
   x86_64)
-    sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
+    sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
 esac
 
@@ -24,12 +26,13 @@ cd build
 ../configure                                       \
     --target=$LFS_TGT                              \
     --prefix=$LFS/tools                            \
-    --with-glibc-version=2.42                      \
+    --with-glibc-version=2.44                      \
     --with-sysroot=$LFS                            \
     --with-newlib                                  \
     --without-headers                              \
     --enable-default-pie                           \
     --enable-default-ssp                           \
+    --disable-fixincludes                          \
     --disable-nls                                  \
     --disable-shared                               \
     --disable-multilib                             \
@@ -47,6 +50,6 @@ make install
 
 cd ..
 
-cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h 
+cat ../gcc/{limitx,glimits,limity}.h > \
+  `$($LFS_TGT-gcc -print-file-name=include)/limits.h 
 

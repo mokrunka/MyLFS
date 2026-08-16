@@ -1,4 +1,6 @@
 # Glibc Phase 1
+# LFS 13.1 Section 5.5
+
 case $(uname -m) in
     i?86)
         ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
@@ -9,7 +11,7 @@ case $(uname -m) in
     ;;
 esac
 
-patch -Np1 -i ../$(basename $PATCH_GLIBC)
+patch -Np1 -i ../$(basename $PATCH_GLIBC_FHS)
 
 mkdir build
 cd build
@@ -21,8 +23,8 @@ echo "rootsbindir=/usr/sbin" > configparms
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --disable-nscd                     \
-      --enable-kernel=5.4                \
-      libc_cv_slibdir=/usr/lib
+      libc_cv_slibdir=/usr/lib           \
+      --enable-kernel=5.10                
 
 make
 make DESTDIR=$LFS install

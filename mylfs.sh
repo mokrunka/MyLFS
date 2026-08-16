@@ -190,7 +190,7 @@ init_image() {
 
     e2label "$LOOP_P1" "$LFS_ROOT_LABEL"
 
-    # LFS 13.0 Section 4.2
+    # LFS 13.1 Section 4.2
     mkdir -p "$LFS/"{etc,var}
     mkdir -p "$LFS/usr/"{bin,lib,sbin}
     local i
@@ -202,7 +202,7 @@ init_image() {
     esac
     mkdir -p "$LFS/tools"
 
-    # LFS 12.4 Section 7.5
+    # LFS 13.1 Section 7.5
     mkdir -p "$LFS/etc/"{opt,sysconfig}
     mkdir -p "$LFS/lib/firmware"
     mkdir -p "$LFS/media/"{floppy,cdrom}
@@ -219,7 +219,7 @@ init_image() {
     install -d -m 0750 "$LFS/root"
     install -d -m 1777 "$LFS/tmp" "$LFS/var/tmp"
 
-    # LFS 12.4 Section 7.6
+    # LFS 13.1 Section 7.6
     ln -s /proc/self/mounts "$LFS/etc/mtab"
 
     if (( BUILDSYSTEMD )); then
@@ -246,7 +246,7 @@ init_image() {
     chmod 664 "$LFS/var/log/lastlog"
     chmod 600 "$LFS/var/log/btmp"
 
-    # LFS 12.4 Section 10.3.2
+    # LFS 13.1 Section 10.3.2
     install -m755 -d "$LFS/etc/modprobe.d"
     #note: if loading USB drivers, may need to add additional lines from book here
 
@@ -354,7 +354,7 @@ mount_image() {
 
     with_log "mounting $LOOP_P1 onto $LFS" mount "$LOOP_P1" "$LFS"
 
-    # LFS 12.4 Section 7.3
+    # LFS 13.1 Section 7.3
     mkdir -p "$LFS"/{dev,proc,sys,run}
     with_log "mounting /dev onto $LFS/dev" mount --bind /dev "$LFS/dev"
     with_log "mounting devpts onto $LFS/dev/pts" mount -t devpts devpts -o gid=5,mode=0620 "$LFS/dev/pts"
@@ -1021,7 +1021,7 @@ main() {
                 fi
             fi
 
-            # phase 3 cleanup (LFS 12.4 Section 7.13.1)
+            # phase 3 cleanup (LFS 13.1 Section 7.15.1)
             if (( phase == 3 && (BUILDALL || STARTPHASE <= 3) )); then
                 post_phase_3_cleanup() {
                     rm -rf "$LFS/usr/share/"{info,man,doc}/*
@@ -1037,7 +1037,7 @@ main() {
                 return 0
             fi
 
-            # phase 4 cleanup (LFS 12.4 Section 8.85)
+            # phase 4 cleanup (LFS 13.1 Section 8.85)
             if (( phase == 4 && (BUILDALL || STARTPHASE <= 4) )); then
                 post_phase_4_cleanup() {
                     # rm -rf "$LFS/tmp/"{*,.*} &&

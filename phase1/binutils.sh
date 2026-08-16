@@ -1,4 +1,5 @@
 # Bintuils Phase 1
+# LFS 13.1 Section 5.2
 
 mkdir build
 cd build
