@@ -1,4 +1,6 @@
 # Util Linux Phase 3
+# LFS 13.1 Section 7.14
+
 mkdir -p /var/lib/hwclock
 
 ./configure --libdir=/usr/lib     \
@@ -14,7 +16,7 @@ mkdir -p /var/lib/hwclock
             --disable-liblastlog2 \
             --without-python      \
             ADJTIME_PATH=/var/lib/hwclock/adjtime \
-            --docdir=/usr/share/doc/util-linux-2.41.1
+            --docdir=/usr/share/doc/util-linux-2.42.2
 
 make
 make install
