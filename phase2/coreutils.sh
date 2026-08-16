@@ -1,9 +1,10 @@
 # Coreutils Phase 2
+# LFS 13.1 Section 6.5
+
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \
             --build=$(build-aux/config.guess) \
-            --enable-install-program=hostname \
-            --enable-no-install-program=kill,uptime
+            --enable-install-program=hostname
 
 make
 make DESTDIR=$LFS install

@@ -1,4 +1,6 @@
 # GCC Phase 2
+# LFS 13.1 Section 6.18
+
 PKG_MPFR=$(basename $PKG_MPFR)
 PKG_GMP=$(basename $PKG_GMP)
 PKG_MPC=$(basename $PKG_MPC)
@@ -17,9 +19,6 @@ case $(uname -m) in
     sed -e '/m64=/s/lib64/lib/' -i gcc/config/i386/t-linux64
   ;;
 esac
-
-sed '/thread_header =/s/@.*@/gthr-posix.h/' \
-    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
 
 mkdir build
 cd build
@@ -41,7 +40,9 @@ cd build
     --disable-libssp                               \
     --disable-libvtv                               \
     --enable-languages=c,c++                       \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc
+    CXX_FOR_TARGET="$LFS_TGT-gcc -nostdinc++"      \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc      \
+    target_configargs=gcc_cv_target_thread_file=posix
 
 make
 make DESTDIR=$LFS install

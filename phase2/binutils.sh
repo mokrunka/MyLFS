@@ -1,4 +1,6 @@
 # Binutils Phase 2
+# LFS 13.1 Section 6.17
+
 sed '6031s/$add_dir//' -i ltmain.sh
 
 mkdir build
@@ -14,7 +16,7 @@ cd build
     --disable-werror           \
     --enable-64-bit-bfd        \
     --enable-new-dtags         \
-    --enable-default-hash-styly=gnu
+    --enable-default-hash-style=gnu
 
 make
 make DESTDIR=$LFS install

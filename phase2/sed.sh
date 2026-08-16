@@ -1,4 +1,6 @@
 # Sed Phase 2
+# LFS 13.1 Section 6.14
+
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \
             --build=$(./build-aux/config.guess)

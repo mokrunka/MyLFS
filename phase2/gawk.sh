@@ -1,4 +1,6 @@
 # Gawk Phase 2
+# LFS 13.1 Section 6.9
+
 sed -i 's/extras//' Makefile.in
 
 ./configure --prefix=/usr   \
