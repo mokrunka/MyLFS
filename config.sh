@@ -22,7 +22,8 @@ export LFS_TGT=$ARCH-lfs-linux-gnu
 export LFS_ROOT_LABEL=LFSROOT
 export LFS_FS_TYPE=ext4
 export LFS_ZONEINFO=America/New_York
-export MAKEFLAGS=${MAKEFLAGS:--j8}
+export MAKEFLAGS=-j$(nproc) # adjust this if you don't want to build with all logical processors
+#${MAKEFLAGS:--j8}
 export ROOT_PASSWD=${ROOT_PASSWD:-password} # change this to whatever you want
 export LFS_HOSTNAME=${LFS_HOSTNAME:-lfs}  # change this to whatever you want
 
