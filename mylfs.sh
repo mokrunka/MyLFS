@@ -808,7 +808,7 @@ main() {
           shift
           shift
           ;;
-        -d|--download)
+        -d|--download-packages)
           DOWNLOAD=1
           shift
           ;;
