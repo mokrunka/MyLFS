@@ -48,8 +48,6 @@ cd build
 make
 make install
 
-cd ..
-
 cat ../gcc/{limitx,glimits,limity}.h > \
-  `$($LFS_TGT-gcc -print-file-name=include)/limits.h 
+  $($LFS_TGT-gcc -print-file-name=include)/limits.h 
 
