@@ -1,4 +1,6 @@
 # Libtool Phase 4
+# LFS 13.1 Section 8.40
+
 ./configure --prefix=/usr
 
 make

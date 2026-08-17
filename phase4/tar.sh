@@ -1,4 +1,8 @@
 # Tar Phase 4
+# LFS 13.1 Section 8.72
+
+patch -Np1 -i ../$(basename $PATCH_TAR)
+
 FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr
 

@@ -1,4 +1,6 @@
 # Findutils Phase 4
+# LFS 13.1 Section 8.63
+
 ./configure --prefix=/usr --localstatedir=/var/lib/locate
 
 make

@@ -1,13 +1,18 @@
 # Elfutils Phase 4
+# LFS 13.1 Section 8.50
+
 ./configure --prefix=/usr                \
             --disable-debuginfod         \
             --enable-libdebuginfod=dummy
+
+make -C lib
+make -C libelf
 
 make
 
 if (( RUN_TESTS )); then
     set +e
-    make check
+    make -k check
     set -e
 fi
 

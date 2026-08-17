@@ -1,4 +1,6 @@
 # OpenSSL Phase 4
+# LFS 13.1 Section 8.49
+
 ./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
@@ -13,10 +15,9 @@ if (( RUN_TESTS )); then
     set -e
 fi
 
-sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-make MANSUFFIX=ssl install
+make INSTALL_LIBS= MANSUFFIX=ssl install
 
-mv /usr/share/doc/openssl /usr/share/doc/openssl-3.5.2
+mv /usr/share/doc/openssl /usr/share/doc/openssl-4.0.1
 
-cp -fr doc/* /usr/share/doc/openssl-3.5.2
+cp -fr doc/* /usr/share/doc/openssl-4.0.1
 

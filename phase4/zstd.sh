@@ -1,4 +1,6 @@
 # Zstd Phase 4
+# LFS 13.1 Section 8.10
+
 make prefix=/usr
 
 if (( RUN_TESTS )); then

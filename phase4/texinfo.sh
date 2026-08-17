@@ -1,5 +1,6 @@
 # Texinfo Phase 4
-sed 's/! $output_file eq/$output_file ne/' -i tp/Texinfo/Convert/*.pm
+# LFS 13.1 Section 8.73
+
 ./configure --prefix=/usr
 
 make

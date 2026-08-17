@@ -1,8 +1,10 @@
 # Attr Phase 4
+# LFS 13.1 Section 8.26
+
 ./configure --prefix=/usr     \
             --disable-static  \
             --sysconfdir=/etc \
-            --docdir=/usr/share/doc/attr-2.5.2
+            --docdir=/usr/share/doc/attr-2.6.0
 
 make
 

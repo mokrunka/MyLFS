@@ -1,4 +1,6 @@
 # Expect Phase 4
+# LFS 13.1 Section 8.18
+
 patch -Np1 -i ../expect-5.45.4-gcc15-1.patch
 
 ./configure --prefix=/usr           \

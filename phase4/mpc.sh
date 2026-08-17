@@ -1,7 +1,9 @@
 # MPC Phase 4
+# LFS 13.1 Section 8.25
+
 ./configure --prefix=/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/mpc-1.3.1
+            --docdir=/usr/share/doc/mpc-1.4.1
 
 make
 make html

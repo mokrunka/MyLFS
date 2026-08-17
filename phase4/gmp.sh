@@ -1,4 +1,6 @@
 # GMP Phase 4
+# LFS 13.1 Section 8.23
+
 sed -i '/long long t1;/,+1s/()/(...)/' configure
 ./configure --prefix=/usr    \
             --enable-cxx     \
@@ -13,13 +15,6 @@ if (( RUN_TESTS )); then
     make check 
     set -e
 fi
-
-#PASS_COUNT=$(awk '/# PASS:/{total+=$3} ; END{print total}' $TESTLOG_DIR/gmp.log)
-#if [ "$PASS_COUNT" != "" ];
-#then
-#    echo "ERROR: GMP tests failed. Check /sources/stage6/gmp_test.log for more info."
-#    exit -1
-#fi
 
 make install
 make install-html

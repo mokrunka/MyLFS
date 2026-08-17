@@ -1,4 +1,6 @@
 # Util-linux Phase 4
+# LFS 13.1 Section 8.81
+
 if (( BUILDSYSTEMD )); then
     ./configure --bindir=/usr/bin     \
             --libdir=/usr/lib     \
@@ -15,7 +17,7 @@ if (( BUILDSYSTEMD )); then
             --disable-static      \
             --without-python      \
             ADJTIME_PATH=/var/lib/hwclock/adjtime \
-            --docdir=/usr/share/doc/util-linux-2.41.1
+            --docdir=/usr/share/doc/util-linux-2.42.2
 else
     ./configure --bindir=/usr/bin     \
             --libdir=/usr/lib     \

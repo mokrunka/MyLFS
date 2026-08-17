@@ -1,4 +1,6 @@
 # Grep Phase 4
+# LFS 13.1 Section 8.38
+
 sed -i "s/echo/#echo/" src/egrep.sh
 ./configure --prefix=/usr
 

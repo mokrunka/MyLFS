@@ -1,4 +1,6 @@
 # Ninja Phase 4
+#LFS 13.1 Section 8.20
+
 export NINJAJOBS=4
 
 sed -i '/int Guess/a \
@@ -8,7 +10,7 @@ sed -i '/int Guess/a \
   if ( j > 0 ) return j;\
 ' src/ninja.cc
 
-python3 configure.py --bootstrap
+python3 configure.py --bootstrap --verbose
 
 install -m755 ninja /usr/bin/
 install -Dm644 misc/bash-completion /usr/share/bash-completion/completions/ninja

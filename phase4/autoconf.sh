@@ -1,4 +1,6 @@
 # Autoconf Phase 4
+# LFS 13.1 Section 8.47
+
 ./configure --prefix=/usr
 
 make

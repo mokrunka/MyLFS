@@ -1,14 +1,16 @@
 # Procps-ng Phase 4
+# LFS 13.1 Section 8.80
+
 if (( BUILDSYSTEMD )); then
     ./configure --prefix=/usr                       \
-            --docdir=/usr/share/doc/procps-ng-4.0.5 \
+            --docdir=/usr/share/doc/procps-ng-4.0.7 \
             --disable-static                        \
             --disable-kill                          \
             --enable-watch8bit                      \
             --with-systemd
 else
     ./configure --prefix=/usr                        \
-            --docdir=/usr/share/doc/procps-ng-4.0.5  \
+            --docdir=/usr/share/doc/procps-ng-4.0.7  \
             --disable-static                         \
             --disable-kill                           \
             --enable-watch8bit

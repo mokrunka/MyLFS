@@ -1,4 +1,6 @@
 # Automake Phase 4
+# LFS 13.1 Section 8.48
+
 ./configure --prefix=/usr --docdir=/usr/share/doc/automake-1.18.1
 
 make

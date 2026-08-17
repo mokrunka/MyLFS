@@ -1,7 +1,9 @@
 # Expat Phase 4
+# LFS 13.1 Section 8.43
+
 ./configure --prefix=/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/expat-2.7.1
+            --docdir=/usr/share/doc/expat-2.8.3
 
 make
 
@@ -13,5 +15,5 @@ fi
 
 make install
 
-install -m644 doc/*.{html,css} /usr/share/doc/expat-2.7.1
+install -m644 doc/*.{html,css} /usr/share/doc/expat-2.8.3
 

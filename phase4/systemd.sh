@@ -1,4 +1,5 @@
 # systemd Phase 4
+# LFS 13.1 Section 8.77
 
 sed -e 's/GROUP="render"/GROUP="video"/' \
     -e 's/GROUP="sgx", //'               \
@@ -25,7 +26,7 @@ meson setup ..                \
       -D nobody-group=nogroup \
       -D sysupdate=disabled   \
       -D ukify=disabled       \
-      -D docdir=/usr/share/doc/systemd-257.8
+      -D docdir=/usr/share/doc/systemd-261.2
 
 ninja
 
@@ -38,7 +39,7 @@ fi
 
 ninja install
 
-tar -xf ../../systemd-man-pages-257.8.tar.xz  \
+tar -xf ../../systemd-man-pages-261.2.tar.xz  \
     --no-same-owner --strip-components=1      \
     -C /usr/share/man
 

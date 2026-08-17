@@ -1,4 +1,5 @@
 # GCC Phase 4
+# LFS 13.1 Section 8.32
 
 case $(uname -m) in
   x86_64)
@@ -16,6 +17,7 @@ cd build
              --enable-default-pie     \
              --enable-default-ssp     \
              --enable-host-pie        \
+             --enable-targets=all     \
              --disable-multilib       \
              --disable-bootstrap      \
              --disable-fixincludes    \
@@ -37,15 +39,14 @@ fi
 
 make install
 
-chown -R root:root \
-    /usr/lib/gcc/$(gcc -dumpmachine)/15.2.0/include{,-fixed}
+chown -R root:root $(gcc -print-file-name=include){,-fixed}
 
 ln -sr /usr/bin/cpp /usr/lib
 
 ln -s gcc.1 /usr/share/man/man1/cc.1
 
-ln -sf ../../libexec/gcc/$(gcc -dumpmachine)/15.2.0/liblto_plugin.so \
-       /usr/lib/bfd-plugins/
+ln -sfr $(gcc -print-prog-name=liblto_plugin.so) /usr/lib/bfd-plugins/
+
 
 mkdir -p /usr/share/gdb/auto-load/usr/lib
 mv /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib

@@ -1,4 +1,6 @@
 # Ncurses Phase 4
+# LFS 13.1 Section 8.33
+
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
             --with-shared           \
@@ -11,11 +13,9 @@
 make
 
 make DESTDIR=$PWD/dest install
-install -m755 dest/usr/lib/libncursesw.so.6.5 /usr/lib
-rm dest/usr/lib/libncursesw.so.6.5
-sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+sed -e 's/^#if.*XOPEN.*$/#if 1/;' \
     -i dest/usr/include/curses.h
-cp -av dest/* /
+cp --remove-destination -av dest/* /
 
 for lib in ncurses form panel menu ; do
     ln -sf lib${lib}w.so /usr/lib/lib${lib}.so
@@ -23,5 +23,5 @@ for lib in ncurses form panel menu ; do
 done
 
 ln -sf libncursesw.so /usr/lib/libcurses.so
-cp -R doc -T /usr/share/doc/ncurses-6.5-20250809
+cp -R doc -T /usr/share/doc/ncurses-6.6
 

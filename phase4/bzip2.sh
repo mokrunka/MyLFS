@@ -1,4 +1,6 @@
 # Bzip2 Phase 4
+# LFS 13.1 Section 8.7
+
 patch -Np1 -i ../$(basename $PATCH_BZIP2)
 
 sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
@@ -10,7 +12,8 @@ make
 make PREFIX=/usr install
 
 cp -a libbz2.so.* /usr/lib
-ln -s libbz2.so.1.0.8 /usr/lib/libbz2.so
+ln -sf libbz2.so.1.0.8 /usr/lib/libbz2.so
+ln 0sf libbz2.so.1.0.8 /usr/lib/libbz2.so.1
 cp bzip2-shared /usr/bin/bzip2
 for i in /usr/bin/{bzcat,bunzip2}; do
   ln -sf bzip2 $i

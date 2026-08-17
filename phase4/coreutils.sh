@@ -1,13 +1,12 @@
 # Coreutils Phase 4
-patch -Np1 -i ../coreutils-9.7-upstream_fix-1.patch
+# LFS 13.1 Section 8.61
 
-patch -Np1 -i ../coreutils-9.7-i18n-1.patch
+patch -Np1 -i ../$(basename $PATCH_COREUTILSINTL)
 
 autoreconf -fv
 automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
-            --enable-no-install-program=kill,uptime
 
 make
 

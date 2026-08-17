@@ -1,4 +1,6 @@
 # Gawk Phase 4
+# LFS 13.1 Section 8.31
+
 sed -i 's/extras//' Makefile.in
 
 ./configure --prefix=/usr
@@ -12,10 +14,10 @@ if (( RUN_TESTS )); then
     set -e
 fi
 
-rm -f /usr/bin/gawk-5.3.2
+rm -f /usr/bin/gawk-5.4.1
 make install
 
 ln -sv gawk.1 /usr/share/man/man1/awk.1
-install -Dm644 doc/{awkforai.txt,*.{eps,pdf,jpg}} -t /usr/share/doc/gawk-5.3.2
+install -Dm644 doc/{awkforai.txt,*.{eps,pdf,jpg}} -t /usr/share/doc/gawk-5.4.1
 
 

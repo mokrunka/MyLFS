@@ -1,4 +1,6 @@
 # Bc Phase 4
+# LFS 13.1 Section 8.15
+
 CC='gcc -std=c99' ./configure --prefix=/usr -G -O3 -r
 
 make

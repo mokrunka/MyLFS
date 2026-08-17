@@ -1,4 +1,6 @@
 # Bash Phase 4
+# LFS 13.1 Section 8.39
+
 ./configure --prefix=/usr                      \
             --without-bash-malloc              \
             --docdir=/usr/share/doc/bash-5.3   \
@@ -22,3 +24,4 @@ fi
 
 make install
 
+exec /usr/bin/bash --login #may need to delete this

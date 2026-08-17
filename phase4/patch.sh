@@ -1,4 +1,6 @@
 # Patch Phase 4
+# LFS 13.1 Section 8.71
+
 ./configure --prefix=/usr
 
 make

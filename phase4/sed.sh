@@ -1,4 +1,6 @@
 # Sed Phase 4
+# LFS 13.1 Section 8.34
+
 ./configure --prefix=/usr
 
 make
@@ -12,6 +14,5 @@ if (( RUN_TESTS )); then
 fi
 
 make install
-install -d -m755 /usr/share/doc/sed-4.9
-install -m644 doc/sed.html /usr/share/doc/sed-4.9
+install -m644 doc/sed.html /usr/share/doc/sed-4.10
 

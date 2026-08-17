@@ -1,4 +1,6 @@
 # Gperf Phase 4
+# LFS 13.1 Section 8.42
+
 ./configure --prefix=/usr --docdir=/usr/share/doc/gperf-3.3
 
 make

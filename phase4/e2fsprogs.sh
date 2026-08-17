@@ -1,4 +1,6 @@
 # E2fsprogs Phase 4
+# LFS 13.1 Section 8.82
+
 mkdir build
 cd build
 

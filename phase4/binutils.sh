@@ -1,4 +1,6 @@
 # Binutils Phase 4
+# LFS 13.1 Section 8.22
+
 mkdir build
 cd build
 
@@ -11,6 +13,7 @@ cd build
              --enable-64-bit-bfd \
              --enable-new-dtags  \
              --with-system-zlib  \
+             --with-lib-path=/usr/lib \
              --enable-defualt-hash-style=gnu
 
 make tooldir=/usr

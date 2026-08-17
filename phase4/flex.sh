@@ -1,4 +1,6 @@
 # Flex Phase 4
+# LFS 13.1 Section 8.16
+
 ./configure --prefix=/usr \
             --docdir=/usr/share/doc/flex-2.6.4 \
             --disable-static

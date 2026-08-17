@@ -1,11 +1,9 @@
 # Glibc Phase 4
+# LFS 13.1 Section 8.5
+
 patch -Np1 -i ../$(basename $PATCH_GLIBC)
 
-sed -e '/unistd.h/i #include <string.h>' \
-    -e '/libc_rwlock_init/c\
-  __libc_rwlock_define_initialized (, reset_lock);\
-  memcpy (&lock, &reset_lock, sizeof (lock));' \
-    -i stdlib/abort.c
+patch -Np1 -i ../$(basename $PATCH_GLIBC_FHS)
 
 mkdir build
 cd build
@@ -17,13 +15,13 @@ echo "rootsbindir=/usr/sbin" > configparms
              --disable-nscd                  \
              libc_cv_slibdir=/usr/lib        \
              --enable-stack-protector=strong \
-             --enable-kernel=5.4
+             --enable-kernel=5.10
 
 make
 
 if (( RUN_TESTS )); then
     set +e
-    make check
+    make check -k -i
     set -e
 fi
 
@@ -130,7 +128,7 @@ done
 
 cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p America/New_York
-unset ZONEINFO
+unset ZONEINFO tz
 
 ln -sf /usr/share/zoneinfo/$LFS_ZONEINFO /etc/localtime
 

@@ -1,4 +1,6 @@
 # MPFR Phase 4
+# LFS 13.1 Section 8.24
+
 ./configure --prefix=/usr        \
             --disable-static     \
             --enable-thread-safe \

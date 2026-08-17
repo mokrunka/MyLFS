@@ -1,7 +1,9 @@
 # Xz Phase 4
+# LFS 13.1 Section 8.8
+
 ./configure --prefix=/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/xz-5.8.1
+            --docdir=/usr/share/doc/xz-5.8.3
 
 make
 

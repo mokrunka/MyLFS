@@ -1,4 +1,6 @@
 # Man-DB Phase 4
+# LFS 13.1 Section 8.79
+
 if (( BUILDSYSTEMD )); then
     ./configure --prefix=/usr                         \
             --docdir=/usr/share/doc/man-db-2.13.1 \

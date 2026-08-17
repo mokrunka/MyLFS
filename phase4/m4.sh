@@ -1,4 +1,6 @@
 # M4 Phase 4
+# LFS 13.1 Section 8.14
+
 ./configure --prefix=/usr
 
 make

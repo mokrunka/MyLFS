@@ -1,4 +1,5 @@
 # Inetutils Phase 4
+# LFS 13.1 Section 8.44
 
 sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c
 

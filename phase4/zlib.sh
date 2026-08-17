@@ -1,4 +1,6 @@
 # Zlib Phase 4
+# LFS 13.1 Section 8.6
+
 ./configure --prefix=/usr
 
 make

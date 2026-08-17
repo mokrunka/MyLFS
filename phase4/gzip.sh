@@ -1,4 +1,6 @@
 # Gzip Phase 4
+# LFS 13.1 Section 8.66
+
 ./configure --prefix=/usr
 
 make

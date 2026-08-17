@@ -1,4 +1,5 @@
 # Bison Phase 4
+# LFS 13.1 Section 8.37
 ./configure --prefix=/usr --docdir=/usr/share/doc/bison-3.8.2
 
 make

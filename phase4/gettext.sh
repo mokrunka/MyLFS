@@ -1,7 +1,9 @@
 # Gettext Phase 4
+# LFS 13.1 Section 8.36
+
 ./configure --prefix=/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/gettext-0.26
+            --docdir=/usr/share/doc/gettext-1.0
 
 make
 

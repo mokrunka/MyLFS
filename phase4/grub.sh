@@ -1,4 +1,8 @@
 # Grub Phase 4
+# LFS 13.1 Section 8.65
+
+sed 's/--image-base/--nonexist-linker-option/' -i configure
+
 echo depends bli part_gpt > grub-core/extra_deps.lst
 
 ./configure --prefix=/usr          \
@@ -9,6 +13,5 @@ echo depends bli part_gpt > grub-core/extra_deps.lst
 make
 
 make install
-mv /etc/bash_completion.d/grub /usr/share/bash-completion/completions
 
 grub-install $LOOP --target i386-pc

@@ -1,4 +1,6 @@
 # Libxcrypt Phase 4
+# LFS 13.1 Section 8.29
+
 ./configure --prefix=/usr                 \
              --enable-hashes=strong,glibc  \
              --enable-obsolete-api=no      \

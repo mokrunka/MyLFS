@@ -1,12 +1,12 @@
 # DejaGNU Phase 4
+# LFS 13.1 Section 8.19
+
 mkdir build
-cd       build
+cd    build
 
 ../configure --prefix=/usr
 makeinfo --html --no-split -o doc/dejagnu.html ../doc/dejagnu.texi
 makeinfo --plaintext       -o doc/dejagnu.txt  ../doc/dejagnu.texi
-
-make check
 
 if (( RUN_TESTS )); then
     set +e
