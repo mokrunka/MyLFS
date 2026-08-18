@@ -1,7 +1,7 @@
 # Pcre2 Phase 4
 # LFS 13.1 Section 8.13
 
-./configure --prefix =/usr    \
+./configure --prefix=/usr    \
             --docdir=/usr/share/doc/pcre2-10.47 \
             --enable-unicode \
             --enable-jit \

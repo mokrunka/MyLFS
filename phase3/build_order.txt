@@ -1,6 +1,8 @@
 gettext
 bison
 perl
+zlib
+mpdecimal
 python
 texinfo
 utillinux
