@@ -15,9 +15,9 @@ umask 022
 # 2) make or other build tools
 # 3) in the template files
 export LC_ALL=POSIX
-export LFS_VERSION=13.0
+export LFS_VERSION=13.1-rc2
 export LFS_CODENAME=lfs  # change this to whatever you want
-export LFS_KERNEL_VERSION=6.18.10
+export LFS_KERNEL_VERSION=7.1.8
 export LFS_TGT=$ARCH-lfs-linux-gnu
 export LFS_ROOT_LABEL=LFSROOT
 export LFS_FS_TYPE=ext4

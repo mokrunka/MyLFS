@@ -10,7 +10,7 @@ sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
 
 make
 
-if (( RUN_TESTS ));
+if (( RUN_TESTS )); then
     set +e
     make check
     set -e

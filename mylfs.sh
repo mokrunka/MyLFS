@@ -390,7 +390,7 @@ unmount_image() {
     local ATTACHED_LOOP
     ATTACHED_LOOP=$(losetup | grep "$LFS_IMG" | cut -d" " -f1)
     if [[ -n "$ATTACHED_LOOP" ]]; then
-        with_log "detatching $ATTACHED_LOOP" losetup -d "$ATTACHED_LOOP"
+        with_log "detaching $ATTACHED_LOOP" losetup -d "$ATTACHED_LOOP"
     fi
 }
 
@@ -452,7 +452,8 @@ build_package() {
         popd
         # keep the linux source around in case of rebuilds
         set +e
-        [[ $script_name != linux ]] && rm -rf 'sources/$script_name'
+        rm -rf 'sources/$script_name'
+#       [[ $script_name != linux ]] && rm -rf 'sources/$script_name'
     "
 
     pushd "$LFS" > /dev/null

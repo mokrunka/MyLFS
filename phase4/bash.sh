@@ -23,5 +23,3 @@ EOF
 fi
 
 make install
-
-exec /usr/bin/bash --login #may need to delete this

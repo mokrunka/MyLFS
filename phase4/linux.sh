@@ -1,5 +1,5 @@
 # LINUX Phase 4
-# section 10.3
+# LFS 13.1 Section 10.3
 CONFIGFILE=config-$LFS_KERNEL_VERSION
 
 make mrproper
